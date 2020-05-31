@@ -114,12 +114,13 @@ int firstFit(int weight[], int n, int c) {
     for (int i = 0; i < n; i++) { 
 
         // Find the first bin that can accommodate weight[i] 
-        for (int j = 0; j < res; j++) { 
+        int j = 0;
+        for (j = 0; j < res; j++) { 
 
             // if item weight is less than available capacity in current bin
             if (bin_rem[j] >= weight[i]) { 
                 bin_rem[j] -= weight[i]; 
-                break; 
+                j = res + 1; 
             } 
         } 
   
