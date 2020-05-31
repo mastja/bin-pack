@@ -58,15 +58,17 @@ int main(){
 
         // get data and call functions for each test case
         for(int i = 0; i < t; i++){
-            cout << "Test case " << i;
+            cout << "Test case " << i + 1;
             inFile >> c;
+            cout << "\n c = " << c << "\n";
             inFile >> n;
-            
+            cout << "\n n = " << n << "\n";
+
             // set weight array size
             weight = new int [n];
     
             // fill weight array with values from input file
-            for (int j = 0; j <= n; j++){
+            for (int j = 0; j < n; j++){
                 inFile >> weight[j];
             }
 
