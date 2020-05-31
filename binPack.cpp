@@ -57,9 +57,7 @@ int main(){
     for(int i = 0; i < t; i++){
         cout << "Test case " << i + 1;
         inFile >> c;
-        cout << "\n c = " << c;
         inFile >> n;
-        cout << "\n n = " << n << "\n";
 
         // set weight array size
         weight = new int [n];
@@ -67,7 +65,6 @@ int main(){
         // fill weight array with values from input file
         for (int j = 0; j < n; j++){
             inFile >> weight[j];
-            cout << "\n weight = " << weight[j];
         }
 
         int bestFitSolution = bestFit(weight, n, c);
@@ -117,12 +114,11 @@ int firstFit(int weight[], int n, int c) {
     for (int i = 0; i < n; i++) { 
 
         // Find the first bin that can accommodate weight[i] 
-        int j; 
-        for (j = 0; j < res; j++) { 
+        for (int j = 0; j < res; j++) { 
 
             // if item weight is less than available capacity in current bin
             if (bin_rem[j] >= weight[i]) { 
-                bin_rem[j] = bin_rem[j] - weight[i]; 
+                bin_rem[j] -= weight[i]; 
                 break; 
             } 
         } 
