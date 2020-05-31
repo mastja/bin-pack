@@ -25,7 +25,7 @@ using namespace std;
 int firstFit(int weight[], int n, int c);
 
 // function drives the First-Fit Decreasing Algorithm
-int firstFitDec(int weight[], int n, int c)
+int firstFitDec(int weight[], int n, int c);
 
 // function drives the Best-Fit Algorithm
 int bestFit(int weight[], int n, int c);
