@@ -67,8 +67,9 @@ int main(){
             inFile >> weight[j];
         }
 
+        int firstFitSolution = firstFit(weight, n, c);
         int bestFitSolution = bestFit(weight, n, c);
-        cout << " First Fit: " << firstFit(weight, n, c)
+        cout << " First Fit: " << firstFitSolution
             << ", First Fit Decreasing: " << firstFitDec(weight, n, c)
             << ", Best Fit: " << bestFitSolution << endl;
 
