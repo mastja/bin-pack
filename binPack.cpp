@@ -19,6 +19,8 @@
 #include<iostream>
 #include<fstream>
 #include<bits/stdc++.h>
+#include <stdlib.h>
+#include <time.h> 
 using namespace std;
 
 // function drives the First-Fit Algorithm, also used in First-Fit Decreasing
@@ -39,7 +41,7 @@ int main(){
     // dynamically allocate pointer to new array
     int * weight = NULL;
     // input file
-    ifstream inFile;
+   /* ifstream inFile;
 
     // open input file and verify the file was opened
     inFile.open("bin.txt");
@@ -51,20 +53,28 @@ int main(){
     // Read test cases from input file
     if (!inFile.eof( )){
         inFile >> t;
-    }
+    } */
+
+    /* initialize random seed: */
+    srand (time(NULL));
+
+    t = 24;
 
     // get data and call functions for each test case
     for(int i = 0; i < t; i++){
         cout << "Test case " << i + 1;
-        inFile >> c;
-        inFile >> n;
+      //  inFile >> c;
+      //  inFile >> n;
+        c = rand() % 50 + 1;
+        n = rand() % 20 + 1;
 
         // set weight array size
         weight = new int [n];
 
         // fill weight array with values from input file
         for (int j = 0; j < n; j++){
-            inFile >> weight[j];
+            //inFile >> weight[j];
+            weight[j] = rand() % 50 + 1;
         }
 
         int firstFitSolution = firstFit(weight, n, c);
@@ -79,7 +89,7 @@ int main(){
     }
 
     // close the opened file
-    inFile.close();
+   // inFile.close();
 
     return 0;
 
